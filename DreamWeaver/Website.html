@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My cat wants to kill me</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div>
+	<input type="button" onclick="demoVisibility()" value="click to see stuff" height="50" class="button"/>
+	<input id="id-zz" type="button" onclick="jumpNew()" value="Are you leaving me?" class="button2" height="100"/>
+</div>
+
+<audio id="id-audio" controls preload hidden>
+	<source src="Audio/Sad Satan2.aac" type="audio/aac">
+</audio>
+	
+<audio id="id-audio2" controls preload hidden>
+	<source src="Audio/Sad Satan1.aac" type="audio/aac">
+</audio>
+
+<img id="id8" src="Images/cat.png" height="562.2" class="cat" alt=""/>
+<img src="Images/copyeyes.png" height="60px" onclick="this.src='Images/eyes.png'" class="eyes" alt="" />
+
+<img src="Images/good.png" height="35px" class="good-boy" alt=""/>
+<img id="id2" src="Images/smart.png" height="35" class="smart-boy" alt=""/>
+<img id="id3" src="Images/escape.png" class="escape-boy" height="70" alt=""/>
+<img id="id4" src="Images/diemnsion.png" class="dimension-boy" height="30" alt=""/>
+<img id="id5" src="Images/nowlook.png" class="look-boy" height="35" alt=""/>
+<img id="id6" src="Images/endlessfire.png" class="fire-boy" height="30" alt=""/>
+<img id="id7" src="Images/glitchcode.jpg" height="600" class="afire" alt=""/>
+<img id="id9" src="Images/HELL.png" height="300" class="afire2" alt=""/>
+<img id="id10" src="Images/CATT.png" height="35" onclick="this.src='Images/glitch.gif'; height='1400'; width='2800'; showGif(); stopPlay();" class="CATT" alt=""/>
+
+<script>
+	i=2;
+	
+	function demoVisibility(){
+		if(i == 2) {
+			document.getElementById("id-audio").play();
+		}
+		document.getElementById("id"+i++).style.visibility="visible";
+	}
+	
+	function stopPlay(){
+		document.getElementById("id-audio").pause();
+		document.getElementById("id-audio2").play();
+	}
+	
+	function jumpNew(){
+		self.location.href="Untitled-1.html";
+	}
+	
+	function showGif(){
+		document.getElementById("id-zz").style.visibility="visible";
+	}
+	
+	(function(){
+		var oImg = document.getElementById("id9");
+		var alpha = 30;
+		oImg.onmouseover = function(){show(100,5) ;}
+		oImg.onmouseout = function(){show(30,-5); }
+		var handler = null;
+
+		function show(target,speed){
+			clearInterval(handler);
+			handler = setInterval(function(){
+				if(alpha == target){
+					clearInterval(handler);
+				}
+				else {
+					alpha+=speed;
+					oImg.style.opacity = alpha/100;
+					oImg.style.filter = 'alpha(opacity:' + alpha +')';
+				}
+
+			},60)
+		}
+	})()
+</script>
+</body>
+</html>
